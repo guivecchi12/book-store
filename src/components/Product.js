@@ -7,7 +7,7 @@ const Product = props => {
 
 			<h1 className="title">{props.product.title}</h1>
 
-			<p className="price">${props.product.price}</p>
+			<p className="price">${(Math.round(props.product.price * 100) / 100).toFixed(2)}</p>
 
 			<button onClick={() => props.addItem(props.product)}>
 				Add to cart

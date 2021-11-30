@@ -8,7 +8,10 @@ const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
 	<Router>
-		<AppWithRouter />
+		{/* <AppWithRouter /> */}
+		<React.StrictMode>
+			<App/>
+		</React.StrictMode>
 	</Router>,
 	document.getElementById('root')
 );
