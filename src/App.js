@@ -6,8 +6,10 @@ import data from './data';
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
+import Login from './components/Login';
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from './contexts/CartContext';
+
 
 function App() {
 	const [products] = useState(data);
@@ -15,13 +17,17 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
-		setCart(oldCart => [...oldCart, item]);
+		if(!cart.includes(item)){
+			console.log("not included")
+			setCart(oldCart => [...oldCart, item]);
+		}
+		console.log("already there");
 	};
 	
 	const removeItem = item => {
-		console.log("Removing", item);
-		console.log("My current cart ", cart);
-		setCart(cart.filter(products => products.title !== item.title))
+		// remove item from cart
+		setCart(cart.filter(items => items.id !== item.id));
+		console.log(cart);
 	};
 
 	return (
@@ -30,7 +36,6 @@ function App() {
 				<CartContext.Provider value = { cart }>
 					<Navigation />
 
-					{/* Routes */}
 					<Route exact path="/">
 						<Products />
 					</Route>
@@ -38,6 +43,7 @@ function App() {
 					<Route path="/cart">
 						<ShoppingCart />
 					</Route>
+					<Route path="/login" component={Login}/>
 				</CartContext.Provider>
 			</ProductContext.Provider>
 		</div>

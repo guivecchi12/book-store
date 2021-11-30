@@ -3,10 +3,13 @@ Book Store
 Front End
     - Current Features
         * Landing Page
+            * Add to cart
         * Shopping Cart
-        * Checkout
+            * Remove from cart
 
     - Future features
+        * Add/remove multiple of the same item into cart
+        * Checkout
         * Login/Sign up
         * Order History
 
