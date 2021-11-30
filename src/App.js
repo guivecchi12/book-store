@@ -10,7 +10,6 @@ import Login from './components/Login';
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from './contexts/CartContext';
 
-
 function App() {
 	const [products] = useState(data);
 	const [cart, setCart] = useState([]);

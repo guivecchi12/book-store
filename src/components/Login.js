@@ -17,17 +17,15 @@ const Login = () => {
   };
 
   const [formState, setFormState] = useState(defaultState);
-  const [errors, setErrors] = useState({ ...defaultState, terms: "" });
+  const [errors, setErrors] = useState({ ...defaultState });
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const { push } = useHistory();
 
 
   useEffect(() => {
     // disable button until all fields are filled
-    if (formState.terms) {
-      setButtonDisabled(!formState.terms);
-    }
-  }, [formState]);
+    setButtonDisabled(!formState.terms);
+  }, [formState.terms]);
 
   //this is use for the onsubmit function
   const formSubmit = (e) => {
@@ -38,7 +36,7 @@ const Login = () => {
     setFormState({
       username: "",
       password: "",
-      terms: "",
+      terms: false,
     });
 
     // let user = { username: formState.username, password: formState.password };
@@ -110,11 +108,13 @@ const Login = () => {
                     <input name="terms" type="checkbox" onChange={handleChange} />
                     Terms of Service
                 </label>
+
                 <button disabled={buttonDisabled}>SUBMIT</button>
+
                 <div className="register">            
-                <p>Not registered yet?</p>
-                <Link to="/signup">Register Here</Link>
-            </div>
+                    <p>Not registered yet?</p>
+                    <Link to="/signup">Register Here</Link>
+                </div>
             </div>  
         </form>
     </div>
