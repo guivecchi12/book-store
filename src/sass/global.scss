@@ -127,3 +127,18 @@ html {
 	font-family: sans-serif;
 	background: #f3f3f3;
 }
+
+.popup-overlay{
+	background-color: gray;
+	opacity: .95;
+}
+.popup-content{
+	width:30%;
+	text-align: center;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	background-color: black;
+	padding: 40px;
+	color: white;
+}

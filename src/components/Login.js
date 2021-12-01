@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 // import axiosWithAuth from "../utilities/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 // import { UserContext } from "../context/UserContext";
-
-
+import Popup from 'reactjs-popup';
 
 const Login = () => {
 //   const { setUser } = useContext(UserContext);
@@ -93,7 +92,7 @@ const Login = () => {
                 <label htmlFor="password">
                     Password
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         onChange={handleChange}
                         value={formState.password}
@@ -106,7 +105,13 @@ const Login = () => {
                 </label>
                 <label className="terms" htmlFor="terms">
                     <input name="terms" type="checkbox" onChange={handleChange} />
-                    Terms of Service
+                    <Popup 
+                      trigger={<button> Terms of Service </button>} 
+                      modal
+                      closeOnDocumentClick
+                    >
+                      <div>These products are for personal enjoyment and not for resale</div>
+                    </Popup> 
                 </label>
 
                 <button disabled={buttonDisabled}>SUBMIT</button>
