@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for bookstore",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "author": "Guilherme Vecchi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "knex": "^0.95.14",
+    "node": "^17.1.0",
+    "react": "^17.0.2",
+    "sqlite3": "^5.0.2"
+  }
+}
